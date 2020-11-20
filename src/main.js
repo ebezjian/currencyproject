@@ -13,7 +13,7 @@ function clearFields() {
 }
 $(document).ready(function () {
   $("#convertButton").click(function () {
-    let usBase = $("usCurrency").val();
+    let usBase = $("#usCurrency").val();
     clearFields();
     let Promise = CurrencyExchange.exchange();
 
@@ -21,7 +21,7 @@ $(document).ready(function () {
       function (response) {
         const body = JSON.parse(response);
         $(".showCurrency1").text(
-          `This is how much you would have in Korea is ${body.conversion_rates.KRW}`
+          `This is how much you would have in Korea is ${body.conversion_rates.KRW} from ${usBase}`
         );
         $(".showErrors").text("");
       },
