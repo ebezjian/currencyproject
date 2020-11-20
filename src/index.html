@@ -8,20 +8,12 @@
 <body>
   <div class="container">
     <h1>How much is your money worth in other countries?</h1>
-    <div>
-      <input type="number">
-      <select>
-        <option value="currency">Currency</option>
-      </select>
-    </div>
-
-    <div>
-      <input type="number">
-      <select>
-        <option value="currency">Currency</option>
-      </select>
-    </div>
-
+    <label for="usCurrency">Enter your amount in USD:</label>
+    <input id="usCurrency" type="number">
+    <button class="btn-success" id="convertButton">Exchange it!</button>
+    <div class="showErrors"></div>
+    <div class="showCurrency1"></div>
+    <div class="showCurrency2"></div>
   </div>
 </body>
 </html>  

@@ -19,6 +19,6 @@ $('#convertButton').click(function() {
     }
   }
   function getElements(response) {
-    $('.showCurrency1').text(`This is how much you would have in Korea is ${response.}`)
+    $('.showCurrency1').text(`This is how much you would have in Korea is ${res[]}`)
   }
 })
