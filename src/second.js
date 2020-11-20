@@ -1,11 +1,13 @@
 export default class CurrencyExchange {
   static async exchange() {
     console.log(process.env.API_KEY)
-    return fetch(
-      `https://v6.exchangerate-api.com/v6/{process.env.API_KEY}/latest/USD`
+      fetch(
+      `https://v6.exchangerate-api.com/v6/0b1cb3dd097b644cbf0a7166/latest/USD`
     )
     
       .then((response) => {
+        console.log(JSON.parse(response))
+        return response
         if (!response.ok) {
           throw Error(response.message);
         }

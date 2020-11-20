@@ -16,9 +16,10 @@ $(document).ready(function () {
     let usBase = $("#usCurrency").val();
     clearFields();
     let Promise = CurrencyExchange.exchange();
-
+    console.log(Promise)
     Promise.then(
       function (response) {
+        console.log(response)
         const body = JSON.parse(response);
         $(".showCurrency1").text(
           `This is how much you would have in Korea is ${body.conversion_rates.KRW} from ${usBase}`
