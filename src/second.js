@@ -6,8 +6,6 @@ export default class CurrencyExchange {
     )
     
       .then((response) => {
-        console.log(JSON.parse(response))
-        return response
         if (!response.ok) {
           throw Error(response.message);
         }
