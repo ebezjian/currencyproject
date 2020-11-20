@@ -17,10 +17,9 @@ $(document).ready(function () {
     clearFields();
     CurrencyExchange.exchange()
       .then((exchangeRes) => {
-        const valueKorea = exchangeRes.conversion_rates.KRW
-        console.log(usBase * valueKorea)
-        let finalValue = usBase * valueKorea
+        const valueKorea = exchangeRes.conversion_rates.KRW;
+        let finalValue = usBase * valueKorea;
         return $(".showCurrency1").text(finalValue);       
-      })
+      });
   });
 });
