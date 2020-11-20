@@ -5,21 +5,25 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import CurrencyExchange from './second.js';
 
-
-$('#convertButton').click(function() {
-  const baseCurrency = $('#usCurrency').val();
+function clearFields() {
   $('#usCurrency').val("");
-
-  let request = new XMLHttpRequest();
-  const url = `https://v6.exchangerate-api.com/v6/{process.env.API_KEY}/latest/USD`;
-
-  request.onreadystatechange = function() {
-    if (this.readyState === 4 && this.status === 200) {
-      const response = JSON.parse(this.responseText);
-      getElements(response);
-    }
-  }
-  function getElements(response) {
-    $('.showCurrency1').text(`This is how much you would have in Korea is ${res[]}`)
-  }
-})
+  $('.showErrors').text("");
+  $('.showCurrency1').text("");
+  $('.showCurrency2').text("");
+}
+$(document).ready(function(){
+$('#convertButton').click(function() {
+  let usBase = $('usCurrency').val();
+  clearFields();
+  let Promise = CurrencyExchange.exchange();
+ 
+  Promise.then(function(response){
+    const body = JSON.parse(response);
+    $('.showCurrency1').text(`This is how much you would have in Korea is ${body.conversion_rates.KRW}`)
+    $('.showErrors').text("");
+  }, function(error) {
+    $('.showErrors').text(`There was an error processing your request:${error}`);
+  
+    });
+  });
+});
