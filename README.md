@@ -1,10 +1,9 @@
-![logo](https://user-images.githubusercontent.com/49379604/99858080-ba71c000-2b5a-11eb-90ff-100e81c67f00.png)
+![Ellie Lambert](https://user-images.githubusercontent.com/49379604/99858836-68ca3500-2b5c-11eb-989b-28d6b30ae04d.png)
 
-#### TODO, 11/06/2020
 
-#### **By Ellie Lambert**
+#### Currency Project, 11/20/2020
 
-## TODO
+## Currency Project
 
 ## Setup
 
