@@ -15,10 +15,12 @@ $(document).ready(function () {
   $("#convertButton").click(function () {
     let usBase = $("#usCurrency").val();
     clearFields();
-    console.log(Promise)
     CurrencyExchange.exchange()
       .then((exchangeRes) => {
-        console.log(exchangeRes)
+        const valueKorea = exchangeRes.conversion_rates.KRW
+        console.log(usBase * valueKorea)
+        let finalValue = usBase * valueKorea
+        return $(".showCurrency1").text(finalValue);       
       })
   });
 });
