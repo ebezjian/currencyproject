@@ -14,7 +14,7 @@ module.exports = {
     contentBase: './dist'  
   },    
   plugins: [
-    new Dotenv(),
+    new DotenvWebpackPlugin(),
     new CleanWebpackPlugin(), 
     new HtmlWebpackPlugin({
       title: 'TODO',
