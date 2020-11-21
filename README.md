@@ -23,8 +23,10 @@
 | | | |
 
 
-## Bugs
-
+## Bugs/future edits
+- want to explore more css options
+- add select of all currency
+- more clear instructions into readme
 
 ## For support
 
