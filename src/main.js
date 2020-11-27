@@ -5,21 +5,21 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../css/styles.css";
 import CurrencyExchange from "./second.js";
 
-function clearFields() {
-  $("#usCurrency").val("");
-  $(".showErrors").text("");
-  $(".showCurrency1").text("");
-  $(".showCurrency2").text("");
-}
 $(document).ready(function () {
+  CurrencyExchange.exchange().then((exchangeRes) => {
+    console.log(typeof exchangeRes.conversion_rates);
+    const rates = exchangeRes.conversion_rates;
+
+    $.each(rates, function (key, value) {
+      $("#otherCountry").append(
+        $("<option></option>").attr("value", value).text(key)
+      );
+    });
+  });
+
   $("#convertButton").click(function () {
-    let usBase = $("#usCurrency").val();
-    clearFields();
-    CurrencyExchange.exchange()
-      .then((exchangeRes) => {
-        const valueKorea = exchangeRes.conversion_rates.KRW;
-        let finalValue = usBase * valueKorea;
-        return $(".showCurrency1").text(finalValue);       
-      });
+    const finalValue = $("select#otherCountry").val();
+
+    return $("#result").text(finalValue);
   });
 });
