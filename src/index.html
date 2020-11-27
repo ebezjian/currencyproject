@@ -7,10 +7,19 @@
 </head>
 <body>
   <div class="container">
-    <h1>How much is your money worth in other countries?</h1>
-    <label for="usCurrency">Enter your amount in USD:</label>
-    <input id="usCurrency" type="number">
-    <button class="btn-success" id="convertButton">Exchange it!</button>
+    <div class="form-group">
+      <h1>How much is your money worth in other countries?</h1>
+      <label for="USD">Enter your amount in USD:</label>
+      <input id="USD" type="number" class="form-control" placeholder="Enter Dollar Amount" required>
+      <label for="otherCountry"> Convert to</label>
+      <select name="othercountry" id="otherCountry" class="form-control" required>
+        <option value="none" selected:"select" hidden></option>
+      </select>
+
+      </div>
+      <button class="btn-success" id="convertButton">Exchange it!</button>
+      <div id="result"
+    
     <div class="showErrors"></div>
     <div class="showCurrency1"></div>
     <div class="showCurrency2"></div>
