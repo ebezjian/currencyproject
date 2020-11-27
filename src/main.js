@@ -7,7 +7,7 @@ import CurrencyExchange from "./second.js";
 
 $(document).ready(function () {
   CurrencyExchange.exchange().then((exchangeRes) => {
-    console.log(typeof exchangeRes.conversion_rates);
+    
     const rates = exchangeRes.conversion_rates;
 
     $.each(rates, function (key, value) {
