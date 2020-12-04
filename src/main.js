@@ -7,14 +7,17 @@ import CurrencyExchange from "./second.js";
 
 $(document).ready(function () {
   CurrencyExchange.exchange().then((exchangeRes) => {
-    
-    const rates = exchangeRes.conversion_rates;
-
-    $.each(rates, function (key, value) {
-      $("#otherCountry").append(
-        $("<option></option>").attr("value", value).text(key)
-      );
-    });
+    if (exchangeRes.conversion_rates) {
+      const rates = exchangeRes.conversion_rates;
+      
+      $.each(rates, function (key, value) {
+        $("#otherCountry").append(
+          $("<option></option>").attr("value", value).text(key)
+        );
+      });
+    } else {
+      $(".showErrors").text(`There was an error:${exchangeRes.message}`);
+    }
   });
 
   $("#convertButton").click(function () {

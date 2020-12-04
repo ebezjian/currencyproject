@@ -10,6 +10,7 @@ export default class CurrencyExchange {
         return response.json();
       })
       .catch((error) => {
+        
         return error.message;
       });
   }
