@@ -16,17 +16,21 @@
 - [Click to open active site in Github]) (https://ebezjian.github.io/currencyproject/) Or simply paste the following url into your prefered browser https://ebezjian.github.io/currencyproject/
 - you will need to add an extension to block CORS
 
-## Specifications
+## Setup Instructions for Node
 
-| Behavior                                                        | Input     | Output    |
-| --------------------------------------------------------------- | --------- | --------- |
-| | | |
+- Node Package Manager and locally installed files are required to properly view this project.
+- After the repository is on your computer, navigate to the terminal and type in ```npm install```
+- Create a ```.env``` file in the project root directory
+- Navigate to https://www.exchangerate-api.com/
+- Request a free API key
+- Save your api key to your ```.env`` file using this format: API_KEY=your-api-key-here
+- Next, ```npm run build```
+- And finally, ```npm run start```
+- View the page in the live server that opens
 
 
 ## Bugs/future edits
-- want to explore more css options
-- add select of all currency
-- more clear instructions into readme
+- 
 
 ## For support
 
@@ -38,8 +42,6 @@
 - Visual Studio Code
 - HTML
 - Markdown
-- Bootstrap
-- Css
 - jQuery
 - Javascript
 - webpacks
@@ -47,6 +49,7 @@
 - Jest
 - node package manager(npm)
 - API
+- CORS extension from google Chrome
 
 ### License
 
