@@ -9,6 +9,10 @@ $(document).ready(function () {
   CurrencyExchange.exchange().then((exchangeRes) => {
     if (exchangeRes.conversion_rates) {
       const rates = exchangeRes.conversion_rates;
+      if (isNaN(exchangeRes.conversion_rates)){
+        $('#showErrors').text('there was an error: this currency is not available');
+      }
+
       
       $.each(rates, function (key, value) {
         $("#otherCountry").append(
